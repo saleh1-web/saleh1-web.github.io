@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astra X — نسخه کامل اصلاح‌شده (بدون پارالاکس)</title>
+  <meta name="description" content="نسخه کامل با امکانات پیشرفته: تم روشن/تاریک، زبان فارسی/انگلیسی، نمودار، لایت‌باکس، کاروسل، تب‌ها، مودال، توست، فرم تماس و نقشه." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <!-- External CSS files (must be in same folder or adjust paths) -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Background ornaments -->
+  <div class="gridline"></div><div class="noise"></div><div class="orb o1"></div><div class="orb o2"></div>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand"><div class="logo float"></div> <span data-i18n="brand">Astra X</span></div>
+      <nav class="nav" id="nav">
+        <a href="#features" data-i18n="nav_features">امکانات</a>
+        <a href="#services" data-i18n="nav_services">خدمات</a>
+        <a href="#video" data-i18n="nav_video">نمایش</a>
+        <a href="#pricing" data-i18n="nav_pricing">قیمت‌گذاری</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">نمونه‌کار</a>
+        <a href="#blog" data-i18n="nav_blog">بلاگ</a>
+        <a href="#contact" data-i18n="nav_contact">تماس</a>
+        <div class="mega">
+          <a class="btn btn-glass" data-i18n="nav_more">بیشتر</a>
+          <div class="panel">
+            <div class="panel-grid">
+              <div class="panel-item">
+                <h5 data-i18n="mega_integrations_t">اتصال‌ها</h5>
+                <small data-i18n="mega_integrations_d">API، وب‌هوک، OAuth</small>
+              </div>
+              <div class="panel-item">
+                <h5 data-i18n="mega_security_t">امنیت</h5>
+                <small data-i18n="mega_security_d">هدرهای هاردن، CSP، TLS</small>
+              </div>
+              <div class="panel-item">
+                <h5 data-i18n="mega_analytics_t">آنالیتیکس</h5>
+                <small data-i18n="mega_analytics_d">رویداد، قیف، کانال‌ها</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="cta">
+        <button id="rtlToggle" class="btn btn-outline tip" data-tip="RTL/LTR">RTL/LTR</button>
+        <div class="lang">
+          <button id="langFa" class="active">FA</button>
+          <button id="langEn">EN</button>
+        </div>
+        <div class="toggle" id="themeToggle"><span></span></div>
+        <a class="btn btn-primary" href="#contact" data-i18n="cta_demo">رزرو دمو</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero (پارالاکس حذف شده) -->
+  <section class="hero container" id="hero">
+    <div class="sparkle"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="chip" data-i18n="hero_badge">نسخه Hyper-Enterprise | SLA 99.99% | SOC-Ready</div>
+        <h1 class="headline">
+          <span data-i18n="hero_title_1">سطح لوکس دیجیتال با</span>
+          <span class="gradient-text" data-i18n="hero_title_2">افکت‌های نئونی و سه‌بعدی</span>
+        </h1>
+        <p class="subhead" data-i18n="hero_subhead">
+          یک فایل، همه‌چیز: اجرای سریع، سئو فنی، کاروسل، لایت‌باکس، نمودارهای زنده، تم روشن/تاریک، انتخاب زبان، پنل‌های شیشه‌ای و انیمیشن‌های پیشرفته.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button type="button" class="btn btn-primary magnetic" id="openModal" onclick="openModal()" data-i18n="hero_cta_primary">شروع رایگان</button>
+          <button type="button" class="btn btn-glass magnetic" id="showToast" onclick="showGuideToast()" data-i18n="hero_cta_secondary">کتابچه راهنما</button>
+        </div>
+
+        <div class="hero-cards" style="margin-top:22px">
+          <div class="hero-card reveal glow">
+            <h4 data-i18n="hero_perf_t">Core Performance</h4>
+            <small data-i18n="hero_perf_d">بهینه‌سازی Lighthouse: عملکرد، دسترسی، SEO</small>
+            <div class="stat-inline">
+              <span class="check"></span> <span data-i18n="hero_perf_dt">امتیاز 96+ دسکتاپ</span>
+              <span class="check warn"></span> <span data-i18n="hero_perf_mt">92+ موبایل</span>
+            </div>
+          </div>
+          <div class="hero-card reveal glow">
+            <h4 data-i18n="hero_sec_t">امنیت و مقیاس</h4>
+            <small data-i18n="hero_sec_d">TLS، CSP، کش هوشمند، آماده CDN جهانی</small>
+            <div class="stat-inline">
+              <span class="check acc"></span> <span data-i18n="hero_sec_h">هاردنینگ هدرها</span>
+              <span class="check suc"></span> <span data-i18n="hero_sec_mr">Multi-Region</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <h4 data-i18n="dashboard_t">داشبورد لحظه‌ای</h4>
+        <small data-i18n="dashboard_d">نمودار ترافیک، تبدیل و منابع ارجاع</small>
+        <canvas id="chart" class="chart"></canvas>
+        <div class="btn-row" style="margin-top:14px">
+          <div class="chip" id="trafficChip">ترافیک: 18,930</div>
+          <div class="chip" id="ctrChip">CTR: 5.1%</div>
+          <div class="chip" id="bounceChip">Bounce: 19%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee">
+      <div class="container marquee-track">
+        <div class="logo-pill"><span class="dot"></span> NextGen</div>
+        <div class="logo-pill"><span class="dot"></span> Quantum.io</div>
+        <div class="logo-pill"><span class="dot"></span> AtlasCloud</div>
+        <div class="logo-pill"><span class="dot"></span> NeonLabs</div>
+        <div class="logo-pill"><span class="dot"></span> Vertex</div>
+        <div class="logo-pill"><span class="dot"></span> NovaPay</div>
+        <div class="logo-pill"><span class="dot"></span> Pulse</div>
+        <div class="logo-pill"><span class="dot"></span> AriaStack</div>
+        <div class="logo-pill"><span class="dot"></span> Helix</div>
+        <div class="logo-pill"><span class="dot"></span> Monocle</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="features_t">امکانات سطح لوکس شرکتی</h2>
+      <p data-i18n="features_d">مگامنو، لایت‌باکس، کاروسل، شمارنده، تم، زبان و جلوه‌های پویا‌نمایی</p>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><div class="ribbon">AI Ready</div><div class="icon"></div><h4 data-i18n="f_seo_t">سئو پیشرفته</h4><small data-i18n="f_seo_d">اسکیما، متاتگ، هدینگ، سرعت بهینه</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_carousel_t">کاروسل نظرات</h4><small data-i18n="f_carousel_d">ناوبری نقطه‌ای با انیمیشن نرم</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_lightbox_t">گالری لایت‌باکس</h4><small data-i18n="f_lightbox_d">بازشدن تمام‌صفحه با بک‌دراپ</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_counters_t">شمارنده زنده</h4><small data-i18n="f_counters_d">انیمیشن اعداد KPI</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_theme_t">تم روشن/تاریک</h4><small data-i18n="f_theme_d">تعویض آنی با ذخیره محلی</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_lang_t">انتخاب زبان</h4><small data-i18n="f_lang_d">فارسی / English، به‌همراه RTL/LTR</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4 data-i18n="f_tooling_t">ابزارهای UI</h4><small data-i18n="f_tooling_d">تب‌ها، مودال، توست، تول‌تیپ، جدول</small></div>
+      <div class="feature reveal"><div class="icon"></div><h4>پشتیبانی سریع</h4><small>VIP Support و SLA</small></div>
+    </div>
+  </section>
+
+  <!-- Services (tabs) -->
+  <section id="services" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="services_t">خدمات ما</h2>
+      <p data-i18n="services_d">ترکیبی از طراحی، مهندسی و رشد کسب‌وکار</p>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="design" data-i18n="tab_design">طراحی</button>
+      <button class="tab" data-tab="engineering" data-i18n="tab_engineering">مهندسی</button>
+      <button class="tab" data-tab="growth" data-i18n="tab_growth">رشد</button>
+    </div>
+    <div class="tab-panels">
+      <div class="panel active" id="panel-design">
+        <div class="services">
+          <div class="service reveal"><h3 data-i18n="srv_brand">برندینگ</h3><p data-i18n="srv_brand_d">هویت بصری، سیستم رنگ و تایپوگرافی.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_uiux">UI/UX</h3><p data-i18n="srv_uiux_d">کامپوننت‌های تمیز، جریان کاربری روان.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_motion">موشن</h3><p data-i18n="srv_motion_d">انیمیشن‌های دقیق و کنترل‌شده.</p></div>
+        </div>
+      </div>
+      <div class="panel" id="panel-engineering">
+        <div class="services">
+          <div class="service reveal"><h3 data-i18n="srv_perf">Performance</h3><p data-i18n="srv_perf_d">CWV عالی، کش و CDN.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_sec">Security</h3><p data-i18n="srv_sec_d">CSP، TLS، هاردنینگ هدر.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_integ">Integrations</h3><p data-i18n="srv_integ_d">REST/GraphQL، OAuth.</p></div>
+        </div>
+      </div>
+      <div class="panel" id="panel-growth">
+        <div class="services">
+          <div class="service reveal"><h3 data-i18n="srv_seo">SEO</h3><p data-i18n="srv_seo_d">اسکیما، متاتگ، ساختار هدینگ.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_analytics">Analytics</h3><p data-i18n="srv_analytics_d">قیف، کانال‌ها، ریتنشن.</p></div>
+          <div class="service reveal"><h3 data-i18n="srv_campaigns">Campaigns</h3><p data-i18n="srv_campaigns_d">بازاریابی چندکاناله.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="video_t">نمایش محصول</h2>
+      <p data-i18n="video_d">تریلر کوتاه از امکانات و تجربه کاربری روان</p>
+    </div>
+    <div class="card reveal">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Astra X Trailer"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="pricing_t">پلن‌ها و قیمت‌گذاری</h2>
+      <div class="toggle-row">
+        <span class="swap" data-i18n="pricing_m">ماهانه</span>
+        <div class="toggle" id="priceToggle"><span></span></div>
+        <span class="swap" data-i18n="pricing_y">سالانه -۱۰%</span>
+      </div>
+    </div>
+    <div class="pricing">
+      <div class="tier reveal glow">
+        <h4 data-i18n="tier_start">استارت</h4>
+        <div class="price"><span data-price="2490000">2,490,000</span> <span data-i18n="currency">تومان</span></div>
+        <div class="feature-list">
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_fast">راه‌اندازی سریع</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_seo">سئو پایه</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_landing">یک لندینگ</span></div>
+        </div>
+        <a class="btn btn-glass" href="#contact" data-i18n="cta_start">شروع</a>
+      </div>
+      <div class="tier best reveal glow">
+        <h4 data-i18n="tier_pro">پرو</h4>
+        <div class="price"><span data-price="6990000">6,990,000</span> <span data-i18n="currency">تومان</span></div>
+        <div class="feature-list">
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_sections">چند بخش کامل</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_analytics">آنالیتیکس داخلی</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_vip">پشتیبانی VIP</span></div>
+        </div>
+        <a class="btn btn-primary" href="#contact" data-i18n="cta_popular">محبوب‌ترین</a>
+      </div>
+      <div class="tier reveal glow">
+        <h4 data-i18n="tier_ent">Enterprise</h4>
+        <div class="price" data-i18n="tier_ent_price">تماس بگیرید</div>
+        <div class="feature-list">
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_sla">SLA و امنیت پیشرفته</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_integrations">ادغام سیستم‌ها</span></div>
+          <div class="feature-item"><span class="check"></span> <span data-i18n="pf_consult">مشاوره اختصاصی</span></div>
+        </div>
+        <a class="btn btn-outline" href="#contact" data-i18n="cta_demo2">درخواست دمو</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="portfolio_t">نمونه‌کار و دستاوردها</h2>
+      <p data-i18n="portfolio_d">گالری پروژه‌ها با KPI‌های واقعی و لایت‌باکس</p>
+    </div>
+    <div class="portfolio">
+      <div class="grid" id="gallery">
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=1"></div>
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=2"></div>
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=3"></div>
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=4"></div>
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=5"></div>
+        <div class="shot reveal" data-img="https://picsum.photos/1200/900?random=6"></div>
+      </div>
+      <div class="kpi reveal">
+        <h3 data-i18n="kpi_t">رشد ۳ ماهه</h3>
+        <div class="bars">
+          <div class="bar"><span style="width:86%"></span></div>
+          <div class="bar"><span style="width:74%"></span></div>
+          <div class="bar"><span style="width:63%"></span></div>
+        </div>
+        <div class="kpi-list">
+          <div data-i18n="kpi_conv">تبدیل: +34%</div>
+          <div data-i18n="kpi_org">ارگانیک: +57%</div>
+          <div data-i18n="kpi_ret">بازگشت مشتری: +25%</div>
+        </div>
+        <table class="data-table reveal" aria-label="Data table">
+          <thead>
+            <tr>
+              <th data-i18n="tbl_metric">شاخص</th>
+              <th data-i18n="tbl_this">این ماه</th>
+              <th data-i18n="tbl_last">ماه قبل</th>
+              <th data-i18n="tbl_delta">تغییر</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox">
+      <img alt="Shot" />
+      <button class="btn btn-danger lb-close" data-i18n="lb_close">بستن</button>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="blog_t">آخرین مطالب بلاگ</h2>
+      <p data-i18n="blog_d">راهنمای رشد، سئو و طراحی ناب</p>
+    </div>
+    <div class="blog">
+      <article class="post reveal">
+        <div class="cover"></div>
+        <div class="content">
+          <h4 data-i18n="blog_1_t">لندینگ تبدیل‌محور پیشرفته</h4>
+          <div class="meta"><span>7</span> <span data-i18n="min">دقیقه</span> • <span data-i18n="cat_growth">رشد</span></div>
+          <p data-i18n="blog_1_d">از هدر تا CTA؛ الگوی افزایش نرخ تبدیل بدون شلوغی.</p>
+          <a class="btn btn-glass" href="#" data-i18n="read_more">ادامه</a>
+        </div>
+      </article>
+      <article class="post reveal">
+        <div class="cover"></div>
+        <div class="content">
+          <h4 data-i18n="blog_2_t">سئو فنی برای تیم‌های کوچک</h4>
+          <div class="meta"><span>5</span> <span data-i18n="min">دقیقه</span> • <span data-i18n="cat_seo">سئو</span></div>
+          <p data-i18n="blog_2_d">چند ترفند سبک برای Core Web Vitals عالی.</p>
+          <a class="btn btn-glass" href="#" data-i18n="read_more">ادامه</a>
+        </div>
+      </article>
+      <article class="post reveal">
+        <div class="cover"></div>
+        <div class="content">
+          <h4 data-i18n="blog_3_t">برندینگ نئونی بدون اغراق</h4>
+          <div class="meta"><span>6</span> <span data-i18n="min">دقیقه</span> • <span data-i18n="cat_design">طراحی</span></div>
+          <p data-i18n="blog_3_d">گرادیانت و شیشه‌ای با انرژی کنترل‌شده.</p>
+          <a class="btn btn-glass" href="#" data-i18n="read_more">ادامه</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section container">
+    <div class="section-header">
+      <h2 data-i18n="test_t">نظر مشتریان</h2>
+      <p data-i18n="test_d">اعتماد واقعی، نتیجه واقعی</p>
+    </div>
+    <div class="carousel reveal" id="carousel">
+      <div class="slides">
+        <div class="slide">
+          <div class="quote">
+            <div class="quote-head">
+              <div class="avatar"></div>
+              <div>
+                <div class="quote-name" data-i18n="test_1_n">استارتاپ اورانوس</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p data-i18n="test_1_d">در کمتر از دو هفته نرخ تبدیل دو برابر شد. سبک، سریع و شیک.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="quote">
+            <div class="quote-head">
+              <div class="avatar"></div>
+              <div>
+                <div class="quote-name" data-i18n="test_2_n">گروه دی‌اکس</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p data-i18n="test_2_d">سئو فنی عالی و دیپلوی بدون دردسر. تیم‌مان عاشق شد!</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="quote">
+            <div class="quote-head">
+              <div class="avatar"></div>
+              <div>
+                <div class="quote-name" data-i18n="test_3_n">نواپِی</div>
+                <div class="stars">★★★★☆</div>
+              </div>
+            </div>
+            <p data-i18n="test_3_d">طراحی نئونی دقیقاً همان چیزی بود که برند ما کم داشت.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <div class="dot-btn active" data-ix="0"></div>
+        <div class="dot-btn" data-ix="1"></div>
+        <div class="dot-btn" data-ix="2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats & Timeline -->
+  <section class="section container">
+    <div class="section-header">
+      <h2 data-i18n="stats_t">آمار و مسیر رشد</h2>
+      <p data-i18n="stats_d">شمارنده‌های زنده و رویدادهای کلیدی</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat-card"><div class="stat-num" data-count="12000">0</div><small data-i18n="stats_u">کاربران فعال</small></div>
+      <div class="stat-card"><div class="stat-num" data-count="340">0</div><small data-i18n="stats_b">مشتریان شرکتی</small></div>
+      <div class="stat-card"><div class="stat-num" data-count="97">0</div><small data-i18n="stats_s">امتیاز رضایت</small></div>
+      <div class="stat-card"><div class="stat-num" data-count="24">0</div><small data-i18n="stats_c">کشورها</small></div>
+    </div>
+    <div class="timeline reveal" style="margin-top:18px">
+      <div class="t-item"><strong>Q1:</strong> <span data-i18n="q1">راه‌اندازی هسته و سئو</span></div>
+      <div class="t-item"><strong>Q2:</strong> <span data-i18n="q2">ورود به بازارهای جدید و ادغام‌ها</span></div>
+      <div class="t-item"><strong>Q3:</strong> <span data-i18n="q3">رشد ارگانیک و کمپین‌ها</span></div>
+      <div class="t-item"><strong>Q4:</strong> <span data-i18n="q4">بهینه‌سازی درآمد و تجربه کاربری</span></div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section container">
+    <div class="section-header">
+      <h2 data-i18n="team_t">تیم</h2>
+      <p data-i18n="team_d">ترکیب طراحی، مهندسی و رشد</p>
+    </div>
+    <div class="team reveal">
+      <div class="member">
+        <div class="avatar-big"></div>
+        <h4 data-i18n="team_1_n">لیلا — طراحی</h4>
+        <small class="muted" data-i18n="team_1_d">هد هویت بصری</small>
+      </div>
+      <div class="member">
+        <div class="avatar-big"></div>
+        <h4 data-i18n="team_2_n">آرمان — مهندسی</h4>
+        <small class="muted" data-i18n="team_2_d">Core Performance</small>
+      </div>
+      <div class="member">
+        <div class="avatar-big"></div>
+        <h4 data-i18n="team_3_n">نیما — رشد</h4>
+        <small class="muted" data-i18n="team_3_d">کمپین و قیف فروش</small>
+      </div>
+      <div class="member">
+        <div class="avatar-big"></div>
+        <h4 data-i18n="team_4_n">سوگل — سئو</h4>
+        <small class="muted" data-i18n="team_4_d">Technical SEO</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download & Newsletter -->
+  <section class="section container">
+    <div class="section-header">
+      <h2 data-i18n="dl_t">دانلود اپ و خبرنامه</h2>
+      <p data-i18n="dl_d">نسخه‌های موبایل و آپدیت‌های دوره‌ای</p>
+    </div>
+    <div class="download">
+      <div class="card reveal">
+        <h3 data-i18n="app_t">اپلیکیشن موبایل</h3>
+        <p class="subhead" data-i18n="app_d">iOS و Android با امکانات کامل</p>
+        <div class="btn-row">
+          <button class="btn btn-success" data-i18n="app_ios">App Store</button>
+          <button class="btn btn-success" data-i18n="app_android">Google Play</button>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="news_t">عضویت در خبرنامه</h3>
+        <p class="subhead" data-i18n="news_d">هر ماه بهترین نکات رشد و طراحی</p>
+        <div class="newsletter">
+          <input class="input" type="email" id="newsEmail" placeholder="you@example.com">
+          <button class="btn btn-primary" id="newsSubmit" data-i18n="news_join">عضویت</button>
+        </div>
+        <small id="newsStatus" class="muted" data-i18n="news_note">ما اسپم نمی‌فرستیم</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container">
+    <div class="section-header">
+      <h2 data-i18n="contact_t">در تماس باشید</h2>
+      <p data-i18n="contact_d">فقط چند ثانیه تا دریافت دمو و مشاوره</p>
+    </div>
+    <div class="contact">
+      <form class="form reveal" id="contactForm">
+        <div class="field">
+          <label data-i18n="form_name">نام و نام‌خانوادگی</label>
+          <input class="input" type="text" name="name" placeholder="مثلاً: صالح رضایی" required />
+        </div>
+        <div class="field">
+          <label data-i18n="form_email">ایمیل</label>
+          <input class="input" type="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label data-i18n="form_phone">شماره تماس</label>
+          <input class="input" type="tel" name="phone" placeholder="09xx xxx xxxx" />
+        </div>
+        <div class="field">
+          <label data-i18n="form_msg">پیام شما</label>
+          <textarea name="message" placeholder="در مورد پروژه‌تون کوتاه بگید..." required></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" type="submit" data-i18n="form_submit">ارسال درخواست</button>
+          <span id="formStatus" class="muted" data-i18n="form_eta">پاسخ در کمتر از ۲۴ ساعت</span>
+        </div>
+      </form>
+
+      <div class="map reveal">
+        <iframe title="Tehran Map" src="https://maps.google.com/maps?q=Tehran&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="foot-col">
+        <h5 data-i18n="brand">Astra X</h5>
+        <p class="muted" data-i18n="footer_about">سایتی سبک، سریع و فول امکانات برای برندهایی که دنبال دیده شدن لوکس هستند.</p>
+        <div class="btn-row">
+          <a class="btn btn-glass" href="#blog" data-i18n="nav_blog">بلاگ</a>
+          <a class="btn btn-glass" href="#portfolio" data-i18n="nav_portfolio">نمونه‌کار</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="footer_product">محصول</h5>
+        <a href="#features" data-i18n="nav_features">امکانات</a>
+        <a href="#pricing" data-i18n="nav_pricing">قیمت‌گذاری</a>
+        <a href="#services" data-i18n="nav_services">خدمات</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="footer_company">شرکت</h5>
+        <a href="#" data-i18n="footer_about_link">درباره ما</a>
+        <a href="#" data-i18n="footer_jobs">فرصت‌های شغلی</a>
+        <a href="#contact" data-i18n="nav_contact">تماس</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="footer_resources">منابع</h5>
+        <a href="#" data-i18n="footer_guide">راهنما</a>
+        <a href="#" data-i18n="footer_docs">مستندات</a>
+        <a href="#" data-i18n="footer_privacy">حریم خصوصی</a>
+      </div>
+    </div>
+    <div class="copyright container">
+      <div>© 2025 Astra X — <span data-i18n="rights">همه حقوق محفوظ است.</span></div>
+      <div data-i18n="made_in">ساخته شده با عشق و دقت در تهران</div>
+    </div>
+  </footer>
+
+  <!-- Modal, Toast, Back to top -->
+  <div class="modal" id="modal">
+    <div class="box">
+      <h3 data-i18n="modal_t">به نسخه Hyper-Enterprise خوش آمدید</h3>
+      <p data-i18n="modal_d">این مودال نمونه‌ای از کامپوننت‌های UI داخله. می‌تونی هر متنی یا فرم ثبت‌نام اینجا بذاری.</p>
+      <div class="btn-row right">
+        <button class="btn btn-glass" id="closeModal" onclick="closeModal()" data-i18n="modal_close">بستن</button>
+        <button class="btn btn-primary" id="modalAction" data-i18n="modal_action">بزن بریم</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <button id="backToTop" class="btn btn-primary tip" data-tip="Top" style="position:fixed;right:18px;bottom:74px;display:none;z-index:180">↑</button>
+
+  <!-- JS -->
+  <script>
+    // Dictionaries (FA/EN)
+    const DICT = {
+      fa: { brand:"Astra X",
+        nav_features:"امکانات", nav_services:"خدمات", nav_video:"نمایش", nav_pricing:"قیمت‌گذاری", nav_portfolio:"نمونه‌کار", nav_blog:"بلاگ", nav_contact:"تماس", nav_more:"بیشتر",
+        mega_integrations_t:"اتصال‌ها", mega_integrations_d:"API، وب‌هوک، OAuth",
+        mega_security_t:"امنیت", mega_security_d:"هدرهای هاردن، CSP، TLS",
+        mega_analytics_t:"آنالیتیکس", mega_analytics_d:"رویداد، قیف، کانال‌ها",
+        cta_demo:"رزرو دمو",
+        hero_badge:"نسخه Hyper-Enterprise | SLA 99.99% | SOC-Ready",
+        hero_title_1:"سطح لوکس دیجیتال با", hero_title_2:"افکت‌های نئونی و سه‌بعدی",
+        hero_subhead:"یک فایل، همه‌چیز: اجرای سریع، سئو فنی، کاروسل، لایت‌باکس، نمودارهای زنده، تم روشن/تاریک، انتخاب زبان، پنل‌های شیشه‌ای و انیمیشن‌های پیشرفته.",
+        hero_cta_primary:"شروع رایگان", hero_cta_secondary:"کتابچه راهنما",
+        hero_perf_t:"Core Performance", hero_perf_d:"بهینه‌سازی Lighthouse: عملکرد، دسترسی، SEO", hero_perf_dt:"امتیاز 96+ دسکتاپ", hero_perf_mt:"92+ موبایل",
+        hero_sec_t:"امنیت و مقیاس", hero_sec_d:"TLS، CSP، کش هوشمند، آماده CDN جهانی", hero_sec_h:"هاردنینگ هدرها", hero_sec_mr:"Multi-Region",
+        dashboard_t:"داشبورد لحظه‌ای", dashboard_d:"نمودار ترافیک، تبدیل و منابع ارجاع",
+        features_t:"امکانات سطح لوکس شرکتی", features_d:"مگامنو، لایت‌باکس، کاروسل، شمارنده، تم، زبان و جلوه‌های پویا‌نمایی",
+        f_seo_t:"سئو پیشرفته", f_seo_d:"اسکیما، متاتگ، هدینگ، سرعت بهینه",
+        f_carousel_t:"کاروسل نظرات", f_carousel_d:"ناوبری نقطه‌ای با انیمیشن نرم",
+        f_lightbox_t:"گالری لایت‌باکس", f_lightbox_d:"بازشدن تمام‌صفحه با بک‌دراپ",
+        f_counters_t:"شمارنده زنده", f_counters_d:"انیمیشن اعداد KPI",
+        f_theme_t:"تم روشن/تاریک", f_theme_d:"تعویض آنی با ذخیره محلی",
+        f_lang_t:"انتخاب زبان", f_lang_d:"فارسی / English، به‌همراه RTL/LTR",
+        f_tooling_t:"ابزارهای UI", f_tooling_d:"تب‌ها، مودال، توست، تول‌تیپ، جدول",
+        services_t:"خدمات ما", services_d:"ترکیبی از طراحی، مهندسی و رشد کسب‌وکار",
+        tab_design:"طراحی", tab_engineering:"مهندسی", tab_growth:"رشد",
+        srv_brand:"برندینگ", srv_brand_d:"هویت بصری، سیستم رنگ و تایپوگرافی.",
+        srv_uiux:"UI/UX", srv_uiux_d:"کامپوننت‌های تمیز، جریان کاربری روان.",
+        srv_motion:"موشن", srv_motion_d:"انیمیشن‌های دقیق و کنترل‌شده.",
+        srv_perf:"Performance", srv_perf_d:"CWV عالی، کش و CDN.",
+        srv_sec:"Security", srv_sec_d:"CSP، TLS، هاردنینگ هدر.",
+        srv_integ:"Integrations", srv_integ_d:"REST/GraphQL، OAuth.",
+        srv_seo:"SEO", srv_seo_d:"اسکیما، متاتگ، ساختار هدینگ.",
+        srv_analytics:"Analytics", srv_analytics_d:"قیف، کانال‌ها، ریتنشن.",
+        srv_campaigns:"Campaigns", srv_campaigns_d:"بازاریابی چندکاناله.",
+        video_t:"نمایش محصول", video_d:"تریلر کوتاه از امکانات و تجربه کاربری روان",
+        pricing_t:"پلن‌ها و قیمت‌گذاری", pricing_m:"ماهانه", pricing_y:"سالانه -۱۰%",
+        tier_start:"استارت", tier_pro:"پرو", tier_ent:"Enterprise", tier_ent_price:"تماس بگیرید",
+        currency:"تومان", pf_fast:"راه‌اندازی سریع", pf_seo:"سئو پایه", pf_landing:"یک لندینگ", pf_sections:"چند بخش کامل", pf_analytics:"آنالیتیکس داخلی", pf_vip:"پشتیبانی VIP",
+        pf_sla:"SLA و امنیت پیشرفته", pf_integrations:"ادغام سیستم‌ها", pf_consult:"مشاوره اختصاصی",
+        cta_start:"شروع", cta_popular:"محبوب‌ترین", cta_demo2:"درخواست دمو",
+        portfolio_t:"نمونه‌کار و دستاوردها", portfolio_d:"گالری پروژه‌ها با KPI‌های واقعی و لایت‌باکس",
+        kpi_t:"رشد ۳ ماهه", kpi_conv:"تبدیل: +34%", kpi_org:"ارگانیک: +57%", kpi_ret:"بازگشت مشتری: +25%",
+        tbl_metric:"شاخص", tbl_this:"این ماه", tbl_last:"ماه قبل", tbl_delta:"تغییر",
+        lb_close:"بستن",
+        blog_t:"آخرین مطالب بلاگ", blog_d:"راهنمای رشد، سئو و طراحی ناب", min:"دقیقه", cat_growth:"رشد", cat_seo:"سئو", cat_design:"طراحی",
+        blog_1_t:"لندینگ تبدیل‌محور پیشرفته", blog_1_d:"از هدر تا CTA؛ الگوی افزایش نرخ تبدیل بدون شلوغی.",
+        blog_2_t:"سئو فنی برای تیم‌های کوچک", blog_2_d:"چند ترفند سبک برای Core Web Vitals عالی.",
+        blog_3_t:"برندینگ نئونی بدون اغراق", blog_3_d:"گرادیانت و شیشه‌ای با انرژی کنترل‌شده.",
+        read_more:"ادامه",
+        test_t:"نظر مشتریان", test_d:"اعتماد واقعی، نتیجه واقعی",
+        test_1_n:"استارتاپ اورانوس", test_1_d:"در کمتر از دو هفته نرخ تبدیل دو برابر شد. سبک، سریع و شیک.",
+        test_2_n:"گروه دی‌اکس", test_2_d:"سئو فنی عالی و دیپلوی بدون دردسر. تیم‌مان عاشق شد!",
+        test_3_n:"نواپِی", test_3_d:"طراحی نئونی دقیقاً همان چیزی بود که برند ما کم داشت.",
+        stats_t:"آمار و مسیر رشد", stats_d:"شمارنده‌های زنده و رویدادهای کلیدی",
+        stats_u:"کاربران فعال", stats_b:"مشتریان شرکتی", stats_s:"امتیاز رضایت", stats_c:"کشورها",
+        q1:"راه‌اندازی هسته و سئو", q2:"ورود به بازارهای جدید و ادغام‌ها", q3:"رشد ارگانیک و کمپین‌ها", q4:"بهینه‌سازی درآمد و تجربه کاربری",
+        team_t:"تیم", team_d:"ترکیب طراحی، مهندسی و رشد",
+        team_1_n:"لیلا — طراحی", team_1_d:"هد هویت بصری",
+        team_2_n:"آرمان — مهندسی", team_2_d:"Core Performance",
+        team_3_n:"نیما — رشد", team_3_d:"کمپین و قیف فروش",
+        team_4_n:"سوگل — سئو", team_4_d:"Technical SEO",
+        dl_t:"دانلود اپ و خبرنامه", dl_d:"نسخه‌های موبایل و آپدیت‌های دوره‌ای",
+        app_t:"اپلیکیشن موبایل", app_d:"iOS و Android با امکانات کامل", app_ios:"App Store", app_android:"Google Play",
+        news_t:"عضویت در خبرنامه", news_d:"هر ماه بهترین نکات رشد و طراحی", news_join:"عضویت", news_note:"ما اسپم نمی‌فرستیم",
+        contact_t:"در تماس باشید", contact_d:"فقط چند ثانیه تا دریافت دمو و مشاوره",
+        form_name:"نام و نام‌خانوادگی", form_email:"ایمیل", form_phone:"شماره تماس", form_msg:"پیام شما", form_submit:"ارسال درخواست", form_eta:"پاسخ در کمتر از ۲۴ ساعت",
+        footer_about:"سایتی سبک، سریع و فول امکانات برای برندهایی که دنبال دیده شدن لوکس هستند.",
+        footer_product:"محصول", footer_company:"شرکت", footer_resources:"منابع", footer_about_link:"درباره ما", footer_jobs:"فرصت‌های شغلی", footer_guide:"راهنما", footer_docs:"مستندات", footer_privacy:"حریم خصوصی",
+        rights:"همه حقوق محفوظ است.", made_in:"ساخته شده با عشق و دقت در تهران",
+        modal_t:"به نسخه Hyper-Enterprise خوش آمدید", modal_d:"این مودال نمونه‌ای از کامپوننت‌های UI داخله. می‌تونی هر متنی یا فرم ثبت‌نام اینجا بذاری.", modal_close:"بستن", modal_action:"بزن بریم"
+      },
+      en: { brand:"Astra X",
+        nav_features:"Features", nav_services:"Services", nav_video:"Showcase", nav_pricing:"Pricing", nav_portfolio:"Portfolio", nav_blog:"Blog", nav_contact:"Contact", nav_more:"More",
+        mega_integrations_t:"Integrations", mega_integrations_d:"API, Webhook, OAuth",
+        mega_security_t:"Security", mega_security_d:"Hardened headers, CSP, TLS",
+        mega_analytics_t:"Analytics", mega_analytics_d:"Events, funnels, channels",
+        cta_demo:"Book Demo",
+        hero_badge:"Hyper-Enterprise | SLA 99.99% | SOC-Ready",
+        hero_title_1:"Luxury-level digital with", hero_title_2:"Neon and 3D effects",
+        hero_subhead:"One file, everything: fast performance, technical SEO, carousel, lightbox, live charts, light/dark theme, language selection, and advanced animations.",
+        hero_cta_primary:"Start Free", hero_cta_secondary:"Playbook",
+        hero_perf_t:"Core Performance", hero_perf_d:"Lighthouse: Performance, Accessibility, SEO", hero_perf_dt:"96+ Desktop score", hero_perf_mt:"92+ Mobile",
+        hero_sec_t:"Security & Scale", hero_sec_d:"TLS, CSP, smart cache, CDN-ready", hero_sec_h:"Hardened headers", hero_sec_mr:"Multi-Region",
+        dashboard_t:"Live Dashboard", dashboard_d:"Traffic, conversions, and referrals",
+        features_t:"Enterprise-grade features", features_d:"Megamenu, lightbox, carousel, counters, theme, language, and animations",
+        f_seo_t:"Advanced SEO", f_seo_d:"Schema, meta, headings, speed",
+        f_carousel_t:"Reviews Carousel", f_carousel_d:"Dot navigation with smooth animations",
+        f_lightbox_t:"Lightbox Gallery", f_lightbox_d:"Fullscreen preview with backdrop",
+        f_counters_t:"Live Counters", f_counters_d:"Animated KPI numbers",
+        f_theme_t:"Light/Dark Theme", f_theme_d:"Instant toggle with local storage",
+        f_lang_t:"Language Picker", f_lang_d:"Persian / English + RTL/LTR",
+        f_tooling_t:"UI Tooling", f_tooling_d:"Tabs, Modal, Toast, Tooltip, Table",
+        services_t:"Our Services", services_d:"Design, engineering, and growth combined",
+        tab_design:"Design", tab_engineering:"Engineering", tab_growth:"Growth",
+        srv_brand:"Branding", srv_brand_d:"Visual identity, color system, type.",
+        srv_uiux:"UI/UX", srv_uiux_d:"Clean components, smooth flows.",
+        srv_motion:"Motion", srv_motion_d:"Precise, controlled animations.",
+        srv_perf:"Performance", srv_perf_d:"Great CWV, cache, CDN.",
+        srv_sec:"Security", srv_sec_d:"CSP, TLS, header hardening.",
+        srv_integ:"Integrations", srv_integ_d:"REST/GraphQL, OAuth.",
+        srv_seo:"SEO", srv_seo_d:"Schema, meta, headings.",
+        srv_analytics:"Analytics", srv_analytics_d:"Funnels, channels, retention.",
+        srv_campaigns:"Campaigns", srv_campaigns_d:"Multichannel marketing.",
+        video_t:"Product showcase", video_d:"Short trailer of features and UX",
+        pricing_t:"Plans & Pricing", pricing_m:"Monthly", pricing_y:"Yearly -10%",
+        tier_start:"Start", tier_pro:"Pro", tier_ent:"Enterprise", tier_ent_price:"Contact us",
+        currency:"IRT", pf_fast:"Quick setup", pf_seo:"Basic SEO", pf_landing:"One landing", pf_sections:"Full sections", pf_analytics:"Built-in analytics", pf_vip:"VIP support",
+        pf_sla:"SLA & advanced security", pf_integrations:"Systems integration", pf_consult:"Dedicated consulting",
+        cta_start:"Start", cta_popular:"Most popular", cta_demo2:"Request demo",
+        portfolio_t:"Portfolio & Achievements", portfolio_d:"Projects with live KPIs and lightbox",
+        kpi_t:"3-month growth", kpi_conv:"Conversion: +34%", kpi_org:"Organic: +57%", kpi_ret:"Return: +25%",
+        tbl_metric:"Metric", tbl_this:"This month", tbl_last:"Last month", tbl_delta:"Δ Change",
+        lb_close:"Close",
+        blog_t:"Latest blog posts", blog_d:"Growth, SEO, and minimalist design", min:"min", cat_growth:"Growth", cat_seo:"SEO", cat_design:"Design",
+        blog_1_t:"Advanced conversion landing", blog_1_d:"From header to CTA; clean pattern to boost conversions.",
+        blog_2_t:"Technical SEO for small teams", blog_2_d:"Lightweight tricks for great Core Web Vitals.",
+        blog_3_t:"Neon branding without overkill", blog_3_d:"Controlled energy with gradients and glass.",
+        read_more:"Read more",
+        test_t:"Customer reviews", test_d:"Real trust, real results",
+        test_1_n:"Uranus Startup", test_1_d:"Conversions doubled in under two weeks. Light, fast, stylish.",
+        test_2_n:"DX Group", test_2_d:"Excellent technical SEO and painless deploy. Team loved it!",
+        test_3_n:"NovaPay", test_3_d:"Neon design was exactly what our brand lacked.",
+        stats_t:"Stats & Growth path", stats_d:"Live counters and key events",
+        stats_u:"Active users", stats_b:"Enterprise clients", stats_s:"Satisfaction score", stats_c:"Countries",
+        q1:"Core launch & SEO", q2:"New markets & integrations", q3:"Organic growth & campaigns", q4:"Revenue & UX optimization",
+        team_t:"Team", team_d:"Design, engineering, and growth",
+        team_1_n:"Leila — Design", team_1_d:"Head of Visual Identity",
+        team_2_n:"Arman — Engineering", team_2_d:"Core Performance",
+        team_3_n:"Nima — Growth", team_3_d:"Campaigns & Funnels",
+        team_4_n:"Sogol — SEO", team_4_d:"Technical SEO",
+        dl_t:"App & Newsletter", dl_d:"Mobile builds and regular updates",
+        app_t:"Mobile App", app_d:"Full iOS and Android features", app_ios:"App Store", app_android:"Google Play",
+        news_t:"Newsletter", news_d:"Monthly growth and design tips", news_join:"Join", news_note:"No spam, ever.",
+        contact_t:"Get in touch", contact_d:"Moments away from demo and consulting",
+        form_name:"Full name", form_email:"Email", form_phone:"Phone", form_msg:"Your message", form_submit:"Submit", form_eta:"Reply under 24 hours",
+        footer_about:"Fast, lightweight, and fully-featured site for luxury-level brands.",
+        footer_product:"Product", footer_company:"Company", footer_resources:"Resources", footer_about_link:"About", footer_jobs:"Jobs", footer_guide:"Guide", footer_docs:"Docs", footer_privacy:"Privacy",
+        rights:"All rights reserved.", made_in:"Built with love and care in Tehran",
+        modal_t:"Welcome to Hyper-Enterprise", modal_d:"This modal showcases built-in UI components. Add any content or signup form here.", modal_close:"Close", modal_action:"Let's go"
+      }
+    };
+
+    const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+    const STATE = { lang: localStorage.getItem('lang') || 'fa', theme: localStorage.getItem('theme') || 'dark' };
+
+    function setText(el,k){ if(el) el.textContent = (DICT[STATE.lang][k]||k); }
+    function applyLang(){
+      document.documentElement.lang = STATE.lang; document.documentElement.dir = STATE.lang==='fa'?'rtl':'ltr';
+      $$('[data-i18n]').forEach(el => setText(el, el.getAttribute('data-i18n')));
+      $('#trafficChip').textContent = STATE.lang==='fa'?'ترافیک: 18,930':'Traffic: 18,930';
+      $('#ctrChip').textContent     = 'CTR: 5.1%';
+      $('#bounceChip').textContent  = 'Bounce: 19%';
+      $('#langFa').classList.toggle('active', STATE.lang==='fa');
+      $('#langEn').classList.toggle('active', STATE.lang==='en');
+    }
+    function applyTheme(){
+      const isLight = STATE.theme==='light';
+      document.body.classList.toggle('light', isLight);
+      $('#themeToggle').classList.toggle('active', isLight);
+    }
+
+    // Toast
+    function pushToast(text){
+      const t = $('#toast'); if(!t) return;
+      const el = document.createElement('div'); el.className='msg'; el.textContent=text; t.appendChild(el);
+      setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(10px)'; setTimeout(()=>el.remove(),600); },2400);
+    }
+
+    // Modal and guide toast (global fallbacks via onclick)
+    function openModal(){ const m = $('#modal'); if(m) m.style.display='flex'; }
+    function closeModal(){ const m = $('#modal'); if(m) m.style.display='none'; }
+    function showGuideToast(){ pushToast(STATE.lang==='fa'?'کتابچه راهنما آماده است!':'Playbook is ready!'); }
+
+    // Initial apply
+    applyTheme(); applyLang();
+
+    // Scroll progress + Back to top
+    const sp = $('#scrollProgress'), btt = $('#backToTop');
+    const onScroll = ()=>{
+      const sTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const sHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = Math.max(0, Math.min(100, (sTop / sHeight) * 100));
+      sp.style.width = pct + '%';
+      btt.style.display = sTop > 500 ? 'inline-flex' : 'none';
+    };
+    document.addEventListener('scroll', onScroll);
+    btt?.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+    // Reveal on scroll
+    const onScrollReveal = ()=>{
+      $$('.reveal').forEach(el=>{ const r = el.getBoundingClientRect(); if(r.top < innerHeight - 60) el.classList.add('visible'); });
+    };
+    document.addEventListener('scroll', onScrollReveal); window.addEventListener('load', onScrollReveal);
+
+    // Magnetic hover
+    $$('.magnetic').forEach(btn=>{
+      btn.addEventListener('mousemove', e=>{ const r = btn.getBoundingClientRect(), x = ((e.clientX-r.left)/r.width-.5)*8; btn.style.setProperty('--m', `${x}px`); });
+      btn.addEventListener('mouseleave', ()=>btn.style.setProperty('--m','0px'));
+    });
+
+    // Chart (no parallax)
+    function drawChart(){
+      const chart = $('#chart'); if(!chart) return;
+      const w = chart.clientWidth, h = 260; chart.width = w*devicePixelRatio; chart.height = h*devicePixelRatio;
+      const ctx = chart.getContext('2d'); ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+      const data = Array.from({length:30}, (_,i)=>Math.round(40 + 20*Math.sin(i/2.3) + Math.random()*25));
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle='rgba(255,255,255,.03)'; ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle='rgba(255,255,255,.08)'; ctx.lineWidth=1; for(let y=0;y<6;y++){ const yy=y*(h/6); ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(w,yy); ctx.stroke(); }
+      ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--primary').trim(); ctx.lineWidth=2.2; ctx.beginPath();
+      data.forEach((v,i)=>{ const x=i*(w/(data.length-1)), y=h - (v/100)*h*0.85; i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); }); ctx.stroke();
+      const grad = ctx.createLinearGradient(0,0,0,h); const isLight = document.body.classList.contains('light');
+      grad.addColorStop(0, isLight ? 'rgba(109,40,217,.25)' : 'rgba(124,58,237,.35)'); grad.addColorStop(1,'rgba(124,58,237,0)');
+      ctx.fillStyle=grad; ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.closePath(); ctx.fill();
+    }
+    window.addEventListener('load', drawChart);
+
+    // Lightbox
+    const lb = $('#lightbox'); const lbImg = lb?.querySelector('img');
+    $$('.shot').forEach(s=> s.addEventListener('click', ()=>{ lb.style.display='flex'; lbImg.src = s.getAttribute('data-img'); }));
+    lb?.addEventListener('click', e=>{ if(e.target===lb || e.target.classList.contains('lb-close')) lb.style.display='none'; });
+
+    // Carousel
+    const carousel = $('#carousel'), slides = carousel?.querySelector('.slides'), dots = carousel?.querySelectorAll('.dot-btn'); let ix=0;
+    const go = n => { ix=n; slides.style.transform=`translateX(-${100*n}%)`; dots.forEach(d=>d.classList.remove('active')); dots[n].classList.add('active'); };
+    dots?.forEach(d=>d.addEventListener('click', ()=>go(+d.dataset.ix))); setInterval(()=>go((ix+1)%3), 5000);
+
+    // Counters
+    const runCounters = ()=>{
+      const locale = STATE.lang==='fa'?'fa-IR':'en-US';
+      $$('.stat-num').forEach(el=>{
+        const target = +el.dataset.count; let cur=0; const step = Math.max(1, Math.round(target/100));
+        const tick = ()=>{ cur+=step; if(cur>=target){ el.textContent = target.toLocaleString(locale); } else { el.textContent = cur.toLocaleString(locale); requestAnimationFrame(tick);} };
+        tick();
+      });
+    };
+    window.addEventListener('load', runCounters);
+
+    // Table
+    const rows = [ {m:'Conversion', t:31, l:26}, {m:'Organic', t:54, l:42}, {m:'Retention', t:22, l:18} ];
+    const tbody = $('#dataTableBody');
+    function drawTable(){
+      if(!tbody) return; const locale = STATE.lang==='fa'?'fa-IR':'en-US'; tbody.innerHTML='';
+      rows.forEach(r=>{ const d=r.t-r.l; const mlabel = (STATE.lang==='fa' ? (r.m==='Conversion'?'تبدیل': r.m==='Organic'?'ارگانیک':'بازگشت') : r.m);
+        const tr=document.createElement('tr'); tr.innerHTML = `<td>${mlabel}</td><td>${r.t.toLocaleString(locale)}%</td><td>${r.l.toLocaleString(locale)}%</td><td style="color:${d>=0?'#10b981':'#ef4444'}">${d>=0?'+':''}${d.toLocaleString(locale)}%</td>`; tbody.appendChild(tr);
+      });
+    }
+    drawTable();
+
+    // Tabs
+    $$('.tab').forEach(t=> t.addEventListener('click', ()=>{
+      $$('.tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
+      $$('.tab-panels .panel').forEach(p=>p.classList.remove('active'));
+      $('#panel-'+t.dataset.tab).classList.add('active');
+    }));
+
+    // Theme toggle
+    $('#themeToggle')?.addEventListener('click', ()=>{
+      const isLight = !document.body.classList.contains('light');
+      document.body.classList.toggle('light', isLight);
+      STATE.theme = isLight?'light':'dark'; localStorage.setItem('theme', STATE.theme);
+      $('#themeToggle').classList.toggle('active', isLight);
+      pushToast(isLight ? (STATE.lang==='fa'?'تم روشن فعال شد':'Light theme on') : (STATE.lang==='fa'?'تم تاریک فعال شد':'Dark theme on'));
+      drawChart();
+    });
+
+    // RTL/LTR
+    $('#rtlToggle')?.addEventListener('click', ()=>{
+      const dir = document.documentElement.getAttribute('dir')==='rtl'?'ltr':'rtl';
+      document.documentElement.setAttribute('dir', dir); pushToast(dir==='rtl' ? 'RTL' : 'LTR');
+    });
+
+    // Language
+    $('#langFa')?.addEventListener('click', ()=>{ STATE.lang='fa'; localStorage.setItem('lang','fa'); applyLang(); drawTable(); pushToast('FA'); });
+    $('#langEn')?.addEventListener('click', ()=>{ STATE.lang='en'; localStorage.setItem('lang','en'); applyLang(); drawTable(); pushToast('EN'); });
+
+    // Pricing toggle
+    const priceToggle = $('#priceToggle');
+    priceToggle?.addEventListener('click', ()=>{
+      priceToggle.classList.toggle('active');
+      const locale = STATE.lang==='fa'?'fa-IR':'en-US';
+      $$('[data-price]').forEach(el=>{
+        const base = +el.dataset.price;
+        const yearly = Math.round(base * 12 * 0.9);
+        el.textContent = (priceToggle.classList.contains('active') ? yearly : base).toLocaleString(locale);
+      });
+      pushToast(STATE.lang==='fa'?'قیمت سالانه محاسبه شد':'Yearly pricing applied');
+    });
+
+    // Newsletter
+    const newsEmail = $('#newsEmail'), newsSubmit = $('#newsSubmit'), newsStatus = $('#newsStatus');
+    newsSubmit?.addEventListener('click', ()=>{
+      const email = newsEmail.value.trim(); const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!ok){ newsStatus.textContent = STATE.lang==='fa'?'ایمیل معتبر وارد کنید':'Enter a valid email'; newsStatus.style.color='#fca5a5'; return; }
+      newsStatus.textContent = STATE.lang==='fa'?'ثبت شد!':'Subscribed!'; newsStatus.style.color='#a7f3d0'; newsEmail.value='';
+      pushToast(STATE.lang==='fa'?'به خبرنامه اضافه شدی':'You joined the newsletter');
+    });
+
+    // Contact form
+    const form = $('#contactForm'), status = $('#formStatus');
+    form?.addEventListener('submit', e=>{
+      e.preventDefault();
+      status.textContent = STATE.lang==='fa'?'در حال ارسال...':'Sending...';
+      setTimeout(()=>{
+        status.textContent = STATE.lang==='fa'?'درخواست شما ثبت شد! تیم ما به‌زودی با شما تماس می‌گیرد.':'Request received! Our team will contact you soon.';
+        status.style.color = '#a7f3d0';
+        form.reset();
+        pushToast(STATE.lang==='fa'?'فرم با موفقیت ارسال شد':'Form submitted successfully');
+      }, 1200);
+    });
+
+    // Close modal via backdrop
+    $('#modal')?.addEventListener('click', e=>{ if(e.target.id==='modal') closeModal(); });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', e=>{
+      if(e.key==='t') $('#themeToggle')?.click();
+      if(e.key==='l') $('#langEn')?.click();
+      if(e.key==='f') $('#langFa')?.click();
+      if(e.key==='Escape' && $('#modal')?.style.display==='flex') closeModal();
+    });
+  </script>
+</body>
+</html>
