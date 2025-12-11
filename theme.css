@@ -1,0 +1,32 @@
+:root{
+  --bg:#070a12; --bg-2:#0b0f17; --panel:#0d1320;
+  --text:#e6e7ea; --muted:#9aa0ad;
+  --primary:#7c3aed; --primary-2:#a78bfa;
+  --accent:#22d3ee; --accent-2:#06b6d4;
+  --success:#10b981; --warning:#f59e0b; --danger:#ef4444;
+  --border:rgba(255,255,255,.08); --glass:rgba(255,255,255,.06);
+  --shadow:0 50px 140px rgba(0,0,0,.5);
+  --radius:18px; --radius-2:26px; --blur:14px;
+  --glow:0 0 22px rgba(124,58,237,.6), 0 0 40px rgba(34,211,238,.4);
+  --scroll:#a78bfa;
+}
+
+body{
+  font-family:system-ui, Segoe UI, Roboto, "Vazirmatn", sans-serif;
+  background:
+    radial-gradient(1600px 600px at 80% -20%, rgba(124,58,237,.24), transparent 60%),
+    radial-gradient(1200px 480px at 10% 20%, rgba(34,211,238,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  color:var(--text); line-height:1.7;
+}
+
+.light{
+  --bg:#f7f8fb; --bg-2:#ffffff; --panel:#ffffff;
+  --text:#12141a; --muted:#606876;
+  --primary:#6d28d9; --primary-2:#8b5cf6;
+  --accent:#0ea5e9; --accent-2:#22d3ee;
+  --border:rgba(0,0,0,.08); --glass:rgba(0,0,0,.04);
+  --shadow:0 40px 120px rgba(0,0,0,.14);
+  --glow:0 0 18px rgba(109,40,217,.24), 0 0 32px rgba(14,165,233,.18);
+  --scroll:#6d28d9;
+}
